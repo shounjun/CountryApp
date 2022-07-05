@@ -1,18 +1,39 @@
+import { useState } from "react";
+import CountryInformation from "./CountryInformation";
+
 const Country = (props: any) => {
+  const [countryName, setCountryName] = useState("");
+
   const countriesNames = props.countries;
   let countriesSelects: any[] = [];
   countriesNames.forEach((country: string) => {
-    let countrySelect = <option value={country}> {country}</option>;
+    let countrySelect = (
+      <option key={country} value={country}>
+        {country}
+      </option>
+    );
     countriesSelects.push(countrySelect);
   });
 
+  const countryChangeHandler = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setCountryName(event?.target?.value);
+  };
   return (
     <>
-      <label>Choose a country:</label>
+      <div>
+        <label>Choose a country:</label>
 
-      <select name="region" id="region">
-        {countriesSelects}
-      </select>
+        <select
+          onChange={(e) => countryChangeHandler(e)}
+          name="region"
+          id="region"
+        >
+          {countriesSelects}
+        </select>
+        <CountryInformation name={countryName}></CountryInformation>
+      </div>
     </>
   );
 };
