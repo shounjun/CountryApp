@@ -1,15 +1,19 @@
-import { useState, useEffect } from "react";
-
+import { useState } from "react";
+/*
 class TCountry {
   name: string = "";
   capital: string = "";
   currencies: string = "";
   languages: string = "";
 }
-
+*/
 const CountryInformation = (props: any) => {
+  const information: any = useState("");
+  /*useSelector((state: any) => state.countryInformation);*/
   const [countryInformation, setCountryInformation]: any = useState({});
 
+  const informationSideBarHandler = () => {};
+  /*
   const onCountryChange = async () => {
     if (props.name === "") return;
     try {
@@ -36,7 +40,7 @@ const CountryInformation = (props: any) => {
   useEffect(() => {
     onCountryChange();
   }, [props.name]);
-
+  
   return (
     <>
       <div> Information about {props.name}:</div>
@@ -44,6 +48,13 @@ const CountryInformation = (props: any) => {
       <div> Capital : {countryInformation?.capital}</div>
       <div> Currency : {countryInformation?.currencies}</div>
       <div> Languages : {countryInformation?.languages}</div>
+    </>
+  );
+  */
+  return (
+    <>
+      <div>{information}</div>
+      <button onClick={informationSideBarHandler}></button>
     </>
   );
 };

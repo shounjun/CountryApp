@@ -13,6 +13,21 @@
   }
 }
 
+.App-sidebar {
+  border-radius: 1px;
+  border-color: black;
+  border: solid;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20vw;
+  height: 100vh;
+}
+
+.App-main-content {
+  width: 80vw;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

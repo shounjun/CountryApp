@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Country from "./Country";
+import "../App.css";
 
 const Region = (props: any) => {
-  const [countriesList, setCountriesList] = useState([]);
   const [region, setRegion] = useState("Africa");
   const [countryNames, setCountryNames] = useState([]);
-
-  const countryChangeHandler = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    setCountriesList([]); //event?.target?.value
-  };
 
   const regionChangeHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setRegion(event?.target?.value);
@@ -63,6 +57,9 @@ const Region = (props: any) => {
         </option>
       </select>
       <Country countries={countryNames}></Country>
+      <div className="App-sidebar">
+        <p>Chosen countries:</p>
+      </div>
     </>
   );
 };
